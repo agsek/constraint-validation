@@ -47,24 +47,28 @@ div {
 }
 
 input {
-	background-color: transparent /*rgba(255,255,255,.5)*/;
+	background-color: transparent;
 	font-size: 1em;
 	line-height: 1.6;
 	padding: 0;
+	-webkit-box-shadow: 0 1px rgba(0,0,0,.5);
 	box-shadow: 0 1px rgba(0,0,0,.5);
 	width: 100%;
 }
 
 input:hover {
+	-webkit-box-shadow: 0 3px rgba(0,0,0,.5); 
 	box-shadow: 0 3px rgba(0,0,0,.5); 
 }
 
 input:focus,
 input:active {
+	-webkit-box-shadow: 0 3px cornflowerblue;
 	box-shadow: 0 3px cornflowerblue;
 }
 
 input.validated:invalid {
+	-webkit-box-shadow: 0 3px coral;
 	box-shadow: 0 3px coral;
 }
 
