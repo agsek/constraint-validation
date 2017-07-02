@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<title>Constraint validation</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+</head>
+<body>
+	<form id="form" autocomplete="off">
+		<fieldset>
+			<legend>Registration form</legend>
+			<div>
+				<input id="firstName" 
+					   name="first_name" 
+					   type="text" 
+					   required
+					   pattern="[A-Za-z\u{00c0}-\u{00d6}\u{00d8}-\u{00f6}\u{00f8}-\u{02af}\u{1e00}-\u{1eff}\u{2c60}-\u{2c7f}\u{a722}-\u{a7ff}\u{0300}-\u{036e}\u{1dc0}-\u{1dfe}\u{20d0}-\u{20f0}\u{0400}-\u{04fe}\u{0500}-\u{052e}\u{2de0}-\u{2dfe}\u{a640}-\u{a69e}\-\.\s]+"
+					   placeholder="First name *">
+				<label for="firstName">First name<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="lastName" 
+					   name="last_name" 
+					   type="text" 
+					   required 
+					   pattern="[-a-zA-ZąłńćśźżóęŚÓŁŃĆĘŹŻĄüöäÜÖÄßáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽäĺľôŕÄĹĽÔŔāēģīķļņŗūĀĒĢĪĶĻŅŖŪąęėįųĄĘĖĮŲõöüÕÖÜćđĆĐăâîşţĂÂÎŞŢãőűÃŐŰабвгдежзийклмнопрстуфхцчшщъыьэюяАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯȘșȚț\. ]+" 
+					   placeholder="Last name *">
+				<label for="lastName">Last name<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="email" 
+					   name="email" 
+					   type="email" 
+					   required 
+					   pattern="[a-zA-Z0-9\.\-_]+@([a-zA-Z0-9-_]+\.)+[a-zA-Z]{2,6}"
+					   placeholder="E-mail *">
+				<label for="email">E-mail<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="password" 
+					   name="password" 
+					   type="password" 
+					   required  
+					   pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+					   placeholder="Password *">
+				<label for="password">Password<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="dob" 
+					   name="dob" 
+					   type="date" 
+					   required
+					   max="2017-07-04"
+					   pattern="(((\d{2}(([13579][26])|([2468][480])|(0[48])))|(([13579][26])|([02468][480]))00)-02-29)|(\d{4}-((?:(0[13578]|1[02])-([0-2]\d|3[0-1]))|(?:(0[469]|11)-([0-2]\d|30))|(?:02-([0-1]\d|2[0-8]))))"
+					   placeholder="Date of birth [YYYY-MM-DD]">
+				<label for="dob">Date of birth<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="phoneNumber" 
+					   name="phone_number" 
+					   type="tel" 
+					   required 
+					   minlength="9" 
+					   maxlength="9"
+					   pattern="[\d]+" 
+					   placeholder="Phone number *">
+				<label for="phoneNumber">Phone number<abbr title="required">&nbsp;*</abbr></label>
+			</div>
+			<div>
+				<input id="height" 
+					   name="height" 
+					   type="number"
+					   min="0.10"
+					   max="2.50" 
+					   step="0.01"  
+					   placeholder="Height [m]">
+				<label for="height">Height [m]</label>
+			</div>
+		</fieldset>
+		<button type="submit">Submit</button>
+	</form>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			valid.init(document.getElementById('form'));
+			form.addEventListener('submit', function() {
+				alert('Form has been submitted');
+			});
+		});
+	</script>
+</body>
+<script type="text/javascript" src="validation.js"></script>
+</html>

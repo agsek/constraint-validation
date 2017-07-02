@@ -1,0 +1,123 @@
+* {
+	outline: 0;
+	font-family: Roboto, Verdana, sans-serif;
+	font-weight: 200;
+	transition: all .08s ease-in;
+}
+
+form {
+	width: 100%;
+	max-width: 500px;
+	background-color: #eee;
+	margin: 3rem auto 0;
+	padding: 15px 40px;
+	box-sizing: border-box;
+}
+
+abbr {
+	text-decoration: none;
+}
+
+legend {
+	font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: -0.15em;
+}
+
+fieldset,
+input {
+	border: none;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+}
+
+legend,
+label,
+input {
+	display: block;
+}
+
+div {
+	position: relative;
+	font-size: 1.5rem;
+	padding: 1em 0 1.5em;
+}
+
+input {
+	background-color: transparent /*rgba(255,255,255,.5)*/;
+	font-size: 1em;
+	line-height: 1.6;
+	padding: 0;
+	box-shadow: 0 1px rgba(0,0,0,.5);
+	width: 100%;
+}
+
+input:hover {
+	box-shadow: 0 3px rgba(0,0,0,.5); 
+}
+
+input:focus,
+input:active {
+	box-shadow: 0 3px cornflowerblue;
+}
+
+input.validated:invalid {
+	box-shadow: 0 3px coral;
+}
+
+input + label[for] {
+	position: absolute;
+	font-size: .5em;
+	font-weight: bold;
+	top: .5em;
+	color: #333;
+	width: 100%;
+}
+
+input + label[for]:after {
+	content: attr(data-error-message);
+	display: block;
+	position: absolute;
+	font-size: 1em;
+	font-weight: bold;
+	color: coral;
+	top: 4.2rem;
+	background-color: #eee;
+	width: 100%;
+}
+
+input:placeholder-shown + label[for] {
+	color: transparent;
+}
+
+input:focus + label[for] {
+	color: #333;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+button {
+	border: none;
+	border-radius: 0;
+	padding: .8em 1em;
+	font-size: 1em;
+	font-weight: bold;
+	background-color: cornflowerblue;
+	color: white;
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+button:hover {
+	background-color: dodgerblue;
+}
+
+button:focus,
+button:active {
+	background-color: royalblue;
+}
